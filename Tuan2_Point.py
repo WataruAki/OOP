@@ -3,6 +3,8 @@ class Point:
     def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
+    def printpoint(self):
+        print(f'({self.x}, {self.y})')
 class Rectangle:
     def __init__(self, corner,  width, height):
         self.corner = corner #Điểm góc dưới bên trái
