@@ -1,19 +1,19 @@
 class CanBo:
-    def __init__(self,hoten="",tuoi=0,gioitinh="",diachi=""):
-        self.__hoten=hoten
+    def __init__(self,ho_ten,tuoi,gioi_tinh,dia_chi):
+        self.__ho_ten=ho_ten
         self.__tuoi=tuoi
-        self.__gioitinh=gioitinh
-        self.__diachi=diachi
+        self.__gioi_tinh=gioi_tinh
+        self.__dia_chi=dia_chi
     #Lấy họ tên để tìm kiếm    
-    def get_hoten(self):
-        return self.__hoten
+    def get_ho_ten(self):
+        return self.__ho_ten
     def inTTin(self):
         print('Thông tin công nhân/viên chức/người lao động')
-        print(f'Họ và tên: {self.__hoten} - {self.__gioitinh} - {self.__tuoi} tuổi')
-        print(f'Địa chỉ: {self.__diachi}')
+        print(f'Họ và tên: {self.__ho_ten} - {self.__gioi_tinh} - {self.__tuoi} tuổi')
+        print(f'Địa chỉ: {self.__dia_chi}')
 class CongNhan(CanBo):
-    def __init__(self,hoten="",tuoi=0,gioitinh="",diachi="",bac=0):
-        super().__init__(hoten,tuoi,gioitinh,diachi)
+    def __init__(self,ho_ten="",tuoi=0,gioi_tinh="",dia_chi="",bac=0):
+        super().__init__(ho_ten,tuoi,gioi_tinh,dia_chi)
         if 0<(bac)<11:
             self.__bac=bac
         else:
@@ -23,15 +23,15 @@ class CongNhan(CanBo):
         super().inTTin()
         print(f'Bậc của công nhân: {self.__bac}')
 class KySu(CanBo):
-    def __init__(self,hoten="",tuoi=0,gioitinh="",diachi="",nganhdaotao=""):
-        super().__init__(hoten,tuoi,gioitinh,diachi)
+    def __init__(self,ho_ten="",tuoi=0,gioi_tinh="",dia_chi="",nganhdaotao=""):
+        super().__init__(ho_ten,tuoi,gioi_tinh,dia_chi)
         self.__nganhdaotao=nganhdaotao
     def inTTin1(self):
         super().inTTin()
         print(f'Ngành đào tạo: {self.__nganhdaotao}')
 class NhanVien(CanBo):
-    def __init__(self,hoten="",tuoi=0,gioitinh="",diachi="",congviec=""):
-        super().__init__(hoten,tuoi,gioitinh,diachi)
+    def __init__(self,ho_ten="",tuoi=0,gioi_tinh="",dia_chi="",congviec=""):
+        super().__init__(ho_ten,tuoi,gioi_tinh,dia_chi)
         self.__congviec=congviec
     def inTTin1(self):
         super().inTTin()
@@ -47,7 +47,7 @@ class QLCB:
         self.tu_khoa = ten_tim_kiem.strip().lower()
         print(f'Kết quả tìm kiếm cho "{ten_tim_kiem}" là: ')
         for i in self.danhsach:
-            if self.tu_khoa in i.get_hoten().lower():
+            if self.tu_khoa in i.get_ho_ten().lower():
                 i.inTTin1()
                 print("-" * 25)
                 ket_qua=True
