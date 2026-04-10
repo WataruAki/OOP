@@ -9,8 +9,8 @@ class BacKhongHopLe(Exception):
 
 # --- 2. Lớp trừu tượng (Abstract Base Class) ---
 class CanBo(ABC):
-    def __init__(self, hoten, tuoi, gioitinh, diachi):
-        self.hoten = hoten
+    def __init__(self, ho_ten, tuoi, gioitinh, diachi):
+        self.ho_ten = ho_ten
         self.tuoi = tuoi  # Gọi property setter để validation
         self.gioitinh = gioitinh
         self.diachi = diachi
@@ -99,13 +99,12 @@ class NhanVien(CanBo):
     def __str__(self):
         return f"[{self.mo_ta()}] {super().__str__()} | Công việc: {self.congviec}"
 
-# --- 4. Lớp Quản lý & File I/O (Context Manager) ---
-class QLCB:
+class QuanLiCanBo:
     def __init__(self):
         self.danhsach = []
 
     def addCB(self, canbo):
-        # Tự động kiểm tra trùng lặp thông qua __eq__
+
         if canbo in self.danhsach:
             print("Cảnh báo: Cán bộ này (trùng tên và tuổi) đã tồn tại trong danh sách!")
         else:
@@ -153,7 +152,7 @@ class QLCB:
 
 # --- 5. Hàm Main (Giao diện Console) ---
 def main():
-    quan_ly = QLCB()
+    quan_ly = QuanLiCanBo()
     
     while True:
         print("\n" + "="*40)

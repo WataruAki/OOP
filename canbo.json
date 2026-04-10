@@ -1,9 +1,9 @@
 [
     {
-        "hoten": "Phùng Thanh Độ",
-        "tuoi": 37,
-        "gioitinh": "Nam",
-        "diachi": "120 Yên Lãng",
+        "ho_ten": "Dùng Thanh Nộ",
+        "tuoi": 36,
+        "gioi_tinh": "Nam",
+        "dia_chi": "120 Yên Lãng, Đống Đa, Hà Nội",
         "loai": "CongNhan",
         "bac": 10
     }
